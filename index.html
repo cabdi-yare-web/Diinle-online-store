@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Diinle Electronics — Premium Technology</title>
+<meta name="description" content="Premium electronics with free delivery across Somalia.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fraunces:opsz,wght@9..144,400;9..144,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+<!-- Loader -->
+<div id="loader">
+  <div class="logo-mark" style="background:var(--accent);color:var(--accent-fg);display:flex;align-items:center;justify-content:center;font-weight:700">D</div>
+  <div class="bar"><span></span></div>
+</div>
+
+<!-- Nav -->
+<header class="nav" id="nav">
+  <div class="container nav-inner">
+    <a class="logo" href="#/"><span class="logo-mark">D</span>Diinle</a>
+    <nav class="nav-links">
+      <a href="#/" data-nav="home">Home</a>
+      <a href="#/shop" data-nav="shop">Shop</a>
+      <a href="#/shop?cat=Smartphones">Phones</a>
+      <a href="#/shop?cat=Laptops">Laptops</a>
+      <a href="#/shop?deals=1">Deals</a>
+      <a href="#/about">About</a>
+    </nav>
+    <div class="nav-actions">
+      <div class="lang-switch">
+        <button data-lang="en" class="active">EN</button>
+        <button data-lang="so">SO</button>
+      </div>
+      <button class="btn-icon theme-toggle" id="themeToggle" aria-label="Theme">
+        <svg class="icon icon-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        <svg class="icon icon-moon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+      <button class="btn-icon" id="searchBtn" aria-label="Search"><svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg></button>
+      <button class="btn-icon" id="cartBtn" aria-label="Cart">
+        <svg class="icon" viewBox="0 0 24 24"><path d="M3 4h2l2.5 12h11l2-8H6"/><circle cx="9" cy="20" r="1.3"/><circle cx="18" cy="20" r="1.3"/></svg>
+        <span class="cart-badge" id="cartBadge">0</span>
+      </button>
+      <button class="btn-icon hamburger" id="hamBtn" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <nav>
+    <a href="#/">Home</a>
+    <a href="#/shop">Shop All</a>
+    <a href="#/shop?cat=Smartphones">Smartphones</a>
+    <a href="#/shop?cat=Laptops">Laptops</a>
+    <a href="#/shop?deals=1">Deals</a>
+    <a href="#/about">About</a>
+  </nav>
+</div>
+
+<!-- Search -->
+<div class="search-modal" id="searchModal">
+  <div class="container">
+    <div class="search-input-wrap">
+      <svg class="icon" viewBox="0 0 24 24" style="width:24px;height:24px;color:var(--fg-3)"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+      <input type="text" id="searchInput" placeholder="Search products, brands, categories…" autocomplete="off">
+      <button class="btn-icon" id="searchClose"><svg class="icon" viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
+    </div>
+    <div class="search-results" id="searchResults"></div>
+  </div>
+</div>
+<div class="overlay" id="overlay"></div>
+
+<!-- Cart -->
+<aside class="drawer" id="cartDrawer">
+  <div class="drawer-head">
+    <h3 id="cartTitle">Cart</h3>
+    <button class="btn-icon" id="cartClose"><svg class="icon" viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
+  </div>
+  <div class="drawer-body" id="cartBody"></div>
+  <div class="drawer-foot" id="cartFoot"></div>
+</aside>
+
+<!-- Mobile filter drawer -->
+<div class="filter-drawer" id="filterDrawer">
+  <div class="handle"></div>
+  <div id="filterDrawerContent"></div>
+</div>
+
+<main id="app"></main>
+<div id="footerMount"></div>
+<div class="toasts" id="toasts"></div>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
